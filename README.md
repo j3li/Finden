@@ -86,7 +86,7 @@ This app is used to look for events/free stuff on campus.
     * To the post
 
 ## Wireframes
-<img src="https://imgur.com/a/rtxKR0b" width=600>
+<img src="https://imgur.com/zjSQUOe.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
