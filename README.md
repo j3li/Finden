@@ -262,8 +262,39 @@ This app is used to look for events/free stuff on campus.
     ```
 - Search Screen
     - (Read/GET) Query events that contain the search keyword
+    ```Swift
+    @IBAction func onSubmitButton(_ sender: Any) {
+        var query = PFQuery(className:"Posts")
+            query.whereKey("author", equalto: "keyword")
+            query.whereKey("caption", equalTo: "keyword")
+            query.whereKey("location", equalTo: "keyword")
+            query.whereKey("eventDate", equalTo: "keyword")
+
+            query.findObjectsInBackground { (posts, error) in
+        if posts != nil {
+            //do something
+          } 
+        //do something
+        }
+    }
+    ```
+    
 - Favorites Screen
     - (Read/Get) Query all liked events
+    ```Swift
+    @IBAction func onSubmitButton(_ sender: Any) {
+        var query = PFQuery(className:"Likes")
+            query.whereKey("post", equalto: "Likes")
+
+            query.findObjectsInBackground { (posts, error) in
+        if posts != nil {
+            //do something
+          } 
+        //do something
+        }
+    }
+    ```
+    
 - Post Screen 
     - (Create/Post) Create a new like on post
     ```Swift
