@@ -1,0 +1,6 @@
+framework module Pods_Finden {
+  umbrella header "Pods-Finden-umbrella.h"
+
+  export *
+  module * { export * }
+}
