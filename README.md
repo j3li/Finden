@@ -171,8 +171,56 @@ This app is used to look for events/free stuff on campus.
     - (Update/PUT) Update user profile image
 - Tableview Screen
     - (Read/GET) Query information on a list of events 
+    ```Swift
+    let post = posts[indexPath.section]
+    let comments = (post["Comments"] as? [PFObject]) ?? []   
+        if indexPath.row == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+    let user = post["author"] as! PFUser
+    cell.usernameLabel.text = user.username
+    cell.captionLabel.text = post["caption"] as! String
+    let imageFile = post["image"] as! PFFileObject
+    let urlString = imageFile.url!
+    let url = URL(string: urlString)!
+        
+    cell.photoView.af_setImage(withURL: url)
+    return cell
+    }else if indexPath.row <= comments.count{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+        let comment = comments[indexPath.row-1]
+        cell.commentLabel.text = comment["text"] as? String
+            let user = comment["author"] as! PFUser
+            cell.nameLabel.text = user.username
+            return cell
+    }else{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+        return cell
+    }
+    // do something with name, friends, level, events attended, events hosted
+            
 - List Screen
-    - (Read/GET) Query gateways to Creation Screen and Search Screen
+    - (Read/GET) Query information on a list of events
+    ```Swift
+    let post = posts[indexPath.section]
+    let comments = (post["Comments"] as? [PFObject]) ?? []
+    if indexPath.row == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
+        let user = post["author"] as! PFUser
+        cell.usernameLabel.text = user.username
+        cell.captionLabel.text = post["caption"] as! String
+        return cell
+    }else if indexPath.row <= comments.count{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell") as! CommentCell
+        let comment = comments[indexPath.row-1]
+        cell.commentLabel.text = comment["text"] as? String
+        let user = comment["author"] as! PFUser
+        cell.nameLabel.text = user.username
+        return cell
+    }else{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddCommentCell")!
+        return cell
+    }
+    // do something with name, friends, level, events attended, events hosted
 - Map Screen
     - (Read/GET) Query all events within map
     ```Swift
