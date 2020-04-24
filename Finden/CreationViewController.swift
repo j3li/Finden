@@ -30,19 +30,19 @@ class CreationViewController: UIViewController {
     }
     
     @IBAction func postButton(_ sender: Any) {
-        let post = PFObject(className: "Posts")
+        let event = PFObject(className: "Events")
         
-        post["caption"] = eventcaptionTextView
-        post["event name"] = eventnameField
-        post["event location"] = eventlocationField
-        post["event data"] =  eventdateField
+        event["event caption"] = eventcaptionTextView
+        event["event name"] = eventnameField
+        event["event location"] = eventlocationField
+        event["event date"] =  eventdateField
         //**For user, maybe displaying username of PFUser would be better maybe? -> For Event Screen
-        post["author"] = PFUser.current()!
+        event["author"] = PFUser.current()!
         
         //need something for image too
         
         //save post
-        post.saveInBackground { (success, error) in
+        event.saveInBackground { (success, error) in
             if success {
                 self.dismiss(animated: true, completion: nil)
                 print("saved!")
