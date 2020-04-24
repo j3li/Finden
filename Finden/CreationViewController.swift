@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CreationViewController: UIViewController {
 
@@ -16,13 +17,39 @@ class CreationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var eventnameField: UITextField!
+    
+    @IBOutlet weak var eventlocationField: UITextField!
+    
+    @IBOutlet weak var eventdateField: UITextField!
+    
+    @IBOutlet weak var eventcaptionTextView: UITextView!
+    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    
     @IBAction func postButton(_ sender: Any) {
+        let post = PFObject(className: "Posts")
+        
+        post["caption"] = eventcaptionTextView
+        post["event name"] = eventnameField
+        post["event location"] = eventlocationField
+        post["event data"] =  eventdateField
+        //**For user, maybe displaying username of PFUser would be better maybe? -> For Event Screen
+        post["author"] = PFUser.current()!
+        
+        //need something for image too
+        
+        //save post
+        post.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("saved!")
+            } else {
+                print("error!")
+            }
+        }
+        
     }
-    
-
 }
