@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oIU-jb-nnC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fbe-SJ-yZN">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,18 +40,78 @@
         <!--Events Feed-->
         <scene sceneID="Mpf-TO-fLx">
             <objects>
-                <viewController title="Events Feed" id="fbe-SJ-yZN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xoo-gN-TYQ">
+                <viewController storyboardIdentifier="EventsFeedViewController" title="Events Feed" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fbe-SJ-yZN" customClass="EventsFeedViewController" customModule="Finden" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MeU-7x-JEn" userLabel="EventsTableView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="GQ5-OR-m8g"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="PSk-rv-FyU"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="EventCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="225" id="PVn-WR-ICp" customClass="EventCell" customModule="Finden" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="225"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PVn-WR-ICp" id="Ypz-pd-ctx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Home Feed" id="PSk-rv-FyU">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="fwG-rM-NvB">
+                            <connections>
+                                <segue destination="Nsp-af-M0V" kind="presentation" id="GUK-9h-SDg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyL-u3-5FB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="1533"/>
+            <point key="canvasLocation" x="1850.7246376811595" y="1532.8125"/>
+        </scene>
+        <!--CreationViewController-->
+        <scene sceneID="uQF-Kg-y55">
+            <objects>
+                <viewController restorationIdentifier="CreationViewController" storyboardIdentifier="CreationViewController" title="CreationViewController" id="fIe-16-S0z" customClass="CreationViewController" customModule="Finden" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZBk-8m-VrW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ncP-nw-CLu">
+                                <rect key="frame" x="0.0" y="56" width="414" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ZlM-46-qiQ"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ncP-nw-CLu" firstAttribute="top" secondItem="Phb-Mn-rmC" secondAttribute="top" id="8m8-2Y-8aX"/>
+                            <constraint firstItem="ncP-nw-CLu" firstAttribute="leading" secondItem="Phb-Mn-rmC" secondAttribute="leading" id="clX-8n-2Eo"/>
+                            <constraint firstItem="Phb-Mn-rmC" firstAttribute="trailing" secondItem="ncP-nw-CLu" secondAttribute="trailing" id="lXK-Nb-EVR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Phb-Mn-rmC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VLi-ih-Z4Y">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="0tr-K9-EGy">
+                            <connections>
+                                <action selector="cancelButton:" destination="fIe-16-S0z" id="MPK-Q0-wTl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="mee-oh-Eo0">
+                            <connections>
+                                <action selector="postButton:" destination="fIe-16-S0z" id="nxj-uH-hS6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAj-hA-x4K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3617" y="1533"/>
         </scene>
         <!--Map-->
         <scene sceneID="vJd-WA-pqz">
@@ -63,23 +123,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Z7c-VQ-WwN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Lnf-iO-yyI"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="Lnf-iO-yyI" userLabel="Map"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dan-5O-YFy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2590" y="814"/>
         </scene>
-        <!--Item-->
+        <!--Favorite-->
         <scene sceneID="UPu-jA-oRY">
             <objects>
-                <viewController id="CJ1-Pu-mLG" sceneMemberID="viewController">
+                <viewController title="Event" id="CJ1-Pu-mLG" userLabel="Favorite" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RqC-6w-RXF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MXy-kn-OUj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="XvD-2f-rx0"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="XvD-2f-rx0" userLabel="Event"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goI-bE-fwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,6 +182,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkW-LJ-6Mr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1851" y="814"/>
+        </scene>
+        <!--Create Navigation Controller-->
+        <scene sceneID="vTO-uL-Cz2">
+            <objects>
+                <navigationController title="Create Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="Nsp-af-M0V" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RxC-3B-pZb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fIe-16-S0z" kind="relationship" relationship="rootViewController" id="tjj-Rb-qjU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Frl-So-NoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2728" y="1533"/>
         </scene>
     </scenes>
 </document>

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06F9EAFC2453289500ADC852 /* EventsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */; };
+		06F9EAFE245328E000ADC852 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFD245328E000ADC852 /* EventCell.swift */; };
+		06F9EB002453294E00ADC852 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFF2453294E00ADC852 /* CreationViewController.swift */; };
 		37E09894EB39FCBB0536238A /* Pods_Finden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5617E95636E8DE043F35F95 /* Pods_Finden.framework */; };
 		3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB12F244B9C6A00E1EFAB /* AppDelegate.swift */; };
 		3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB131244B9C6A00E1EFAB /* SceneDelegate.swift */; };
@@ -39,6 +42,9 @@
 
 /* Begin PBXFileReference section */
 		01F72C3598503CB59F45BB6C /* Pods-Finden-FindenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finden-FindenUITests.debug.xcconfig"; path = "Target Support Files/Pods-Finden-FindenUITests/Pods-Finden-FindenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFeedViewController.swift; sourceTree = "<group>"; };
+		06F9EAFD245328E000ADC852 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		06F9EAFF2453294E00ADC852 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		3F7BB12C244B9C6A00E1EFAB /* Finden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BB12F244B9C6A00E1EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7BB131244B9C6A00E1EFAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 				3F7BB133244B9C6A00E1EFAB /* ViewController.swift */,
 				3F7BB135244B9C6A00E1EFAB /* Main.storyboard */,
 				3F7BB138244B9C8000E1EFAB /* Assets.xcassets */,
+				06F9EAFF2453294E00ADC852 /* CreationViewController.swift */,
+				06F9EAFD245328E000ADC852 /* EventCell.swift */,
+				06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */,
 				3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */,
 				3F7BB13D244B9C8000E1EFAB /* Info.plist */,
 			);
@@ -155,7 +164,6 @@
 				9044A08B5CD752C0C38D9803 /* Pods-FindenTests.debug.xcconfig */,
 				B046BD12230E6D79A8B74379 /* Pods-FindenTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -409,8 +417,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7BB134244B9C6A00E1EFAB /* ViewController.swift in Sources */,
+				06F9EAFC2453289500ADC852 /* EventsFeedViewController.swift in Sources */,
+				06F9EAFE245328E000ADC852 /* EventCell.swift in Sources */,
 				3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */,
 				3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */,
+				06F9EB002453294E00ADC852 /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
