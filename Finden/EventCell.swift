@@ -14,7 +14,7 @@ class EventCell: UITableViewCell {
     
     @IBOutlet weak var eventnameLabel: UILabel!
     
-    @IBOutlet weak var eventlocationLabel: UILabel!
+    @IBOutlet weak var eventcaptionLabel: UILabel!
     
     @IBOutlet weak var eventdateLabel: UILabel!
     

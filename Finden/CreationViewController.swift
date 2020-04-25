@@ -8,14 +8,9 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
-class CreationViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class CreationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var eventnameField: UITextField!
     
@@ -25,19 +20,58 @@ class CreationViewController: UIViewController {
     
     @IBOutlet weak var eventcaptionTextView: UITextView!
     
+    @IBOutlet weak var createImageView: UIImageView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        createImageView.layer.masksToBounds = true
+        createImageView.layer.cornerRadius = 20
+        eventcaptionTextView.layer.cornerRadius = 4
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        let image = info[.editedImage] as! UIImage
+        let size = CGSize(width: 500, height: 500)
+        let scaledimage = image.af_imageScaled(to: size)
+        
+        createImageView.image = scaledimage
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func postButton(_ sender: Any) {
+    @IBAction func onUpload(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        present(picker, animated: true, completion: nil)
+    }
+    
+    @IBAction func onSubmit(_ sender: Any) {
+        let imageData = createImageView.image!.pngData()
+        let file = PFFileObject(name: "image.png", data: imageData!)
         let event = PFObject(className: "Events")
         
-        event["event caption"] = eventcaptionTextView
-        event["event name"] = eventnameField
-        event["event location"] = eventlocationField
-        event["event date"] =  eventdateField
+        event["event caption"] = eventcaptionTextView.text!
+        event["event name"] = eventnameField.text!
+        event["event location"] = eventlocationField.text!
+        event["event date"] =  eventdateField.text!
         //**For user, maybe displaying username of PFUser would be better maybe? -> For Event Screen
-        event["author"] = PFUser.current()!
+        event["image"] = file
+        
+        //event["author"] = PFUser.current()!
         
         //need something for image too
         
@@ -51,5 +85,6 @@ class CreationViewController: UIViewController {
             }
         }
         
+        dismiss(animated: true, completion: nil)
     }
 }

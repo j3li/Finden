@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class EventsFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -27,7 +28,7 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
         
         let query = PFQuery(className: "Events")
         
-        query.includeKey("author")
+        query.includeKeys(["event name","event date", "event caption","event image"])
         query.limit = 20
         query.findObjectsInBackground { (events, error) in
             if events != nil {
@@ -42,16 +43,17 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = eventsTableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
-        
         let event = events[indexPath.row]
+        let imageFile = event["event image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
         
-        let user = event["author"] as! PFUser
+        let cell = eventsTableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
         cell.eventnameLabel.text = event["event name"] as? String
-        cell.eventlocationLabel.text = event["event location"] as? String
+        cell.eventcaptionLabel.text = event["event caption"] as? String
         cell.eventdateLabel.text = event["event date"] as? String
-
-        //something for image too
+        cell.eventImageView.af_setImage(withURL: url)
+        cell.eventImageView.layer.cornerRadius = 10
         
         return cell
     }
@@ -60,7 +62,7 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Get the new vi
         //Find the selected movie
-        if segue.identifier == "EventDetailSegue"{
+        if segue.identifier == "EventDetailSegue" {
             let cell = sender as! UITableViewCell
             let indexPath = eventsTableView.indexPath(for: cell)!
             let event = events[indexPath.row]
@@ -68,13 +70,10 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
             //Pass the selected movie to the details view controller
             let detailViewController = segue.destination as! EventDetailViewController
             detailViewController.event = event
-            
             eventsTableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
-    @IBAction func createButton(_ sender: Any) {
-        performSegue(withIdentifier: "CreateSegue", sender: self)
-    }
+    
     
 }
