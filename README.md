@@ -1,7 +1,7 @@
 Group Project - README Template
 ===
 
-# APP_NAME_HERE (Yelp but for events/free stuff?)
+# Finden
 
 
 ## Table of Contents
