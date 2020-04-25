@@ -191,7 +191,8 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Create"/>
                             <connections>
-                                <segue destination="fIe-16-S0z" kind="presentation" identifier="CreateSegue" id="ibp-oI-hG0"/>
+                                <action selector="onCreate:" destination="fbe-SJ-yZN" eventType="touchUpInside" id="Meg-VK-dWM"/>
+                                <segue destination="fIe-16-S0z" kind="presentation" identifier="CreateSegue" id="HmL-Ds-jo4"/>
                             </connections>
                         </button>
                         <prototypes>
@@ -370,7 +371,7 @@
         <!--CreationViewController-->
         <scene sceneID="uQF-Kg-y55">
             <objects>
-                <viewController restorationIdentifier="CreationViewController" storyboardIdentifier="CreationViewController" title="CreationViewController" id="fIe-16-S0z" customClass="CreationViewController" customModule="Finden" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="CreationViewController" storyboardIdentifier="CreationViewController" title="CreationViewController" wantsFullScreenLayout="YES" id="fIe-16-S0z" customClass="CreationViewController" customModule="Finden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZBk-8m-VrW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

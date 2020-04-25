@@ -55,7 +55,6 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
         } else {
             picker.sourceType = .photoLibrary
         }
-        
         present(picker, animated: true, completion: nil)
     }
     
@@ -64,12 +63,12 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
         let file = PFFileObject(name: "image.png", data: imageData!)
         let event = PFObject(className: "Events")
         
-        event["event caption"] = eventcaptionTextView.text!
-        event["event name"] = eventnameField.text!
-        event["event location"] = eventlocationField.text!
-        event["event date"] =  eventdateField.text!
+        event["eventCaption"] = eventcaptionTextView.text!
+        event["eventName"] = eventnameField.text!
+        event["eventLocation"] = eventlocationField.text!
+        event["eventDate"] =  eventdateField.text!
         //**For user, maybe displaying username of PFUser would be better maybe? -> For Event Screen
-        event["image"] = file
+        event["eventImage"] = file
         
         //event["author"] = PFUser.current()!
         
@@ -84,7 +83,5 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
                 print("error!")
             }
         }
-        
-        dismiss(animated: true, completion: nil)
     }
 }

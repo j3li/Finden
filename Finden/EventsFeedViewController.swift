@@ -25,10 +25,12 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        eventsTableView.rowHeight = 200
+        eventsTableView.reloadData()
         
         let query = PFQuery(className: "Events")
         
-        query.includeKeys(["event name","event date", "event caption","event image"])
+        query.includeKeys(["eventName","eventDate", "eventCaption","eventImage"])
         query.limit = 20
         query.findObjectsInBackground { (events, error) in
             if events != nil {
@@ -44,14 +46,14 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event = events[indexPath.row]
-        let imageFile = event["event image"] as! PFFileObject
+        let imageFile = event["eventImage"] as! PFFileObject
         let urlString = imageFile.url!
         let url = URL(string: urlString)!
         
         let cell = eventsTableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
-        cell.eventnameLabel.text = event["event name"] as? String
-        cell.eventcaptionLabel.text = event["event caption"] as? String
-        cell.eventdateLabel.text = event["event date"] as? String
+        cell.eventnameLabel.text = event["eventName"] as? String
+        cell.eventcaptionLabel.text = event["eventCaption"] as? String
+        cell.eventdateLabel.text = event["eventDate"] as? String
         cell.eventImageView.af_setImage(withURL: url)
         cell.eventImageView.layer.cornerRadius = 10
         
@@ -73,6 +75,14 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
             eventsTableView.deselectRow(at: indexPath, animated: true)
         }
     }
+    
+
+    @IBAction func onCreate(_ sender: Any) {
+        performSegue(withIdentifier: "CreateSegue", sender: self)
+    }
+    
+    
+    
     
     
     
