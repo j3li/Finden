@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		3F7BB13C244B9C8000E1EFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */; };
 		3F7BB147244B9C8100E1EFAB /* FindenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB146244B9C8100E1EFAB /* FindenTests.swift */; };
 		3F7BB152244B9C8100E1EFAB /* FindenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB151244B9C8100E1EFAB /* FindenUITests.swift */; };
+		3FDCC5C32453EE63005B1DA2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCC5C22453EE63005B1DA2 /* LoginViewController.swift */; };
+		3FDCC5C52453F53F005B1DA2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCC5C42453F53F005B1DA2 /* RegisterViewController.swift */; };
 		81FB1372776D70D6B8B41C81 /* Pods_Finden_FindenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D876A5F53F2A5B104B53C01 /* Pods_Finden_FindenUITests.framework */; };
 		83915A6CE14DBFDBC8481456 /* Pods_FindenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C62F77C232AA1418E5CB48 /* Pods_FindenTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		3F7BB14D244B9C8100E1EFAB /* FindenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BB151244B9C8100E1EFAB /* FindenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindenUITests.swift; sourceTree = "<group>"; };
 		3F7BB153244B9C8100E1EFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FDCC5C22453EE63005B1DA2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FDCC5C42453F53F005B1DA2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		48C62F77C232AA1418E5CB48 /* Pods_FindenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D876A5F53F2A5B104B53C01 /* Pods_Finden_FindenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finden_FindenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E78AE58110501FEBD5BFA8 /* Pods-Finden-FindenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finden-FindenUITests.release.xcconfig"; path = "Target Support Files/Pods-Finden-FindenUITests/Pods-Finden-FindenUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 				3F7BB138244B9C8000E1EFAB /* Assets.xcassets */,
 				3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */,
 				3F7BB13D244B9C8000E1EFAB /* Info.plist */,
+				3FDCC5C22453EE63005B1DA2 /* LoginViewController.swift */,
+				3FDCC5C42453F53F005B1DA2 /* RegisterViewController.swift */,
 			);
 			path = Finden;
 			sourceTree = "<group>";
@@ -155,7 +161,6 @@
 				9044A08B5CD752C0C38D9803 /* Pods-FindenTests.debug.xcconfig */,
 				B046BD12230E6D79A8B74379 /* Pods-FindenTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -408,6 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDCC5C32453EE63005B1DA2 /* LoginViewController.swift in Sources */,
+				3FDCC5C52453F53F005B1DA2 /* RegisterViewController.swift in Sources */,
 				3F7BB134244B9C6A00E1EFAB /* ViewController.swift in Sources */,
 				3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */,
 				3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */,
