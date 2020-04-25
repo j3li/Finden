@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fbe-SJ-yZN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hKg-wX-9u3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -101,7 +101,7 @@
                                     <outlet property="eventdateLabel" destination="Rg7-ix-qQh" id="Nln-Mb-xah"/>
                                     <outlet property="eventlocationLabel" destination="PgN-Az-aLq" id="E0N-Tu-XtU"/>
                                     <outlet property="eventnameLabel" destination="Nb6-z0-whZ" id="KD5-2f-b5e"/>
-                                    <segue destination="b6O-Jg-vmc" kind="show" id="zI8-cS-qTz"/>
+                                    <segue destination="b6O-Jg-vmc" kind="show" identifier="EventDetailSegue" id="I2I-aq-PHD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -115,7 +115,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="fwG-rM-NvB">
                             <connections>
-                                <segue destination="fIe-16-S0z" kind="presentation" id="IPV-aZ-Fi8"/>
+                                <action selector="createButton:" destination="fbe-SJ-yZN" id="Mky-hm-83A"/>
+                                <segue destination="fIe-16-S0z" kind="presentation" identifier="CreateSegue" destinationCreationSelector="createSegue:" id="IPV-aZ-Fi8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -135,39 +136,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41c-Uo-9sn">
-                                <rect key="frame" x="58" y="128" width="299" height="307"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKu-WC-Sk2">
-                                <rect key="frame" x="20" y="443" width="140" height="30"/>
+                                <rect key="frame" x="20" y="456" width="140" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z8-N5-tpq">
-                                <rect key="frame" x="20" y="481" width="147" height="28"/>
+                                <rect key="frame" x="20" y="494" width="147" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAN-h1-aEQ">
-                                <rect key="frame" x="20" y="517" width="109" height="28"/>
+                                <rect key="frame" x="20" y="530" width="109" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hLb-fU-4hB">
-                                <rect key="frame" x="20" y="553" width="240" height="128"/>
+                                <rect key="frame" x="20" y="566" width="374" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41c-Uo-9sn">
+                                <rect key="frame" x="20" y="88" width="374" height="360"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7jV-0I-yGv"/>

@@ -47,9 +47,10 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
         let event = events[indexPath.row]
         
         let user = event["author"] as! PFUser
-        cell.eventnameLabel.text = event["event name"] as! String
-        cell.eventlocationLabel.text = event["event location"] as! String
-        cell.eventdateLabel.text = event["event date"] as! String
+        cell.eventnameLabel.text = event["event name"] as? String
+        cell.eventlocationLabel.text = event["event location"] as? String
+        cell.eventdateLabel.text = event["event date"] as? String
+
         //something for image too
         
         return cell
@@ -59,17 +60,21 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //Get the new vi
         //Find the selected movie
-        let cell = sender as! UITableViewCell
-        let indexPath = eventsTableView.indexPath(for: cell)!
-        let event = events[indexPath.row]
-        
-        //Pass the selected movie to the details view controller
-        let detailViewController = segue.description as! EventDetailViewController
-        detailViewController.event = event
-        
-        eventsTableView.deselectRow(at: indexPath, animated: true)
-        
-        
+        if segue.identifier == "EventDetailSegue"{
+            let cell = sender as! UITableViewCell
+            let indexPath = eventsTableView.indexPath(for: cell)!
+            let event = events[indexPath.row]
+            
+            //Pass the selected movie to the details view controller
+            let detailViewController = segue.destination as! EventDetailViewController
+            detailViewController.event = event
+            
+            eventsTableView.deselectRow(at: indexPath, animated: true)
+        }
     }
-
+    
+    @IBAction func createButton(_ sender: Any) {
+        performSegue(withIdentifier: "CreateSegue", sender: self)
+    }
+    
 }
