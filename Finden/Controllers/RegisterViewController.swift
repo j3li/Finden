@@ -13,11 +13,8 @@ class RegisterViewController: UIViewController {
 
     
     @IBOutlet weak var firstnameField: UITextField!
-    
     @IBOutlet weak var lastnameField: UITextField!
-    
     @IBOutlet weak var emailField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
@@ -34,13 +31,19 @@ class RegisterViewController: UIViewController {
         user["lastName"] = lastnameField.text
         
         user.signUpInBackground { (success, error) in
-            if success {
-                print("success")
-                self.performSegue(withIdentifier: "registeredSegue", sender: nil)
-                print("success")
-            } else {
-                print("Error: \(error?.localizedDescription)")
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
             }
+            print("Successfully registered user")
+            self.performSegue(withIdentifier: "registeredSegue", sender: nil)
+//            if success {
+//                print("success")
+//                self.performSegue(withIdentifier: "registeredSegue", sender: nil)
+//                print("success")
+//            } else {
+//                print("Error: \(error?.localizedDescription)")
+//            }
         }
     }
     
