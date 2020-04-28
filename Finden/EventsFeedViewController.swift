@@ -10,22 +10,21 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class EventsFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EventsFeedViewController: UITableViewController {
 
     @IBOutlet var eventsTableView: UITableView!
     
-    var events = [PFObject]()
+    var events = [PFObject]() {
+        didSet { eventsTableView.reloadData() } // Makes sure we have events before we reload the data
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        eventsTableView.delegate = self
-        eventsTableView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        eventsTableView.rowHeight = 200
+        eventsTableView.rowHeight = 150
         eventsTableView.reloadData()
         
         let query = PFQuery(className: "Events")
@@ -35,16 +34,40 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
         query.findObjectsInBackground { (events, error) in
             if events != nil {
                 self.events = events!
-                self.eventsTableView.reloadData()
             }
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //sending data
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let event = events[indexPath.row]
+        
+        let controller = segue.destination as! EventDetailsController
+        controller.event = event        
+        
+        //Get the new vi
+        //Find the selected movie
+//        if segue.identifier == "EventDetailSegue" {
+//            let cell = sender as! UITableViewCell
+//            let indexPath = eventsTableView.indexPath(for: cell)!
+//            let event = events[indexPath.row]
+//
+//            //Pass the selected movie to the details view controller
+//            let detailViewController = segue.destination as! EventDetailsController
+//            detailViewController.event = event
+//            eventsTableView.deselectRow(at: indexPath, animated: true)
+//        }
+    }
+}
+
+extension EventsFeedViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let event = events[indexPath.row]
         let imageFile = event["eventImage"] as! PFFileObject
         let urlString = imageFile.url!
@@ -52,7 +75,6 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
         
         let cell = eventsTableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
         cell.eventnameLabel.text = event["eventName"] as? String
-        cell.eventcaptionLabel.text = event["eventCaption"] as? String
         cell.eventdateLabel.text = event["eventDate"] as? String
         cell.eventImageView.af_setImage(withURL: url)
         cell.eventImageView.layer.cornerRadius = 10
@@ -60,30 +82,8 @@ class EventsFeedViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-    //sending data
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //Get the new vi
-        //Find the selected movie
-        if segue.identifier == "EventDetailSegue" {
-            let cell = sender as! UITableViewCell
-            let indexPath = eventsTableView.indexPath(for: cell)!
-            let event = events[indexPath.row]
-            
-            //Pass the selected movie to the details view controller
-            let detailViewController = segue.destination as! EventDetailViewController
-            detailViewController.event = event
-            eventsTableView.deselectRow(at: indexPath, animated: true)
-        }
-    }
-    
-
-    @IBAction func onCreate(_ sender: Any) {
-        performSegue(withIdentifier: "CreateSegue", sender: self)
-    }
-    
-    
-    
-    
-    
-    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let controller = EventDetailViewController()
+//        navigationController?.pushViewController(controller, animated: true)
+//    }
 }

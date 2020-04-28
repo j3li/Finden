@@ -11,13 +11,14 @@ import UIKit
 class EventCell: UITableViewCell {
 
     @IBOutlet weak var eventImageView: UIImageView!
-    
     @IBOutlet weak var eventnameLabel: UILabel!
-    
-    @IBOutlet weak var eventcaptionLabel: UILabel!
-    
     @IBOutlet weak var eventdateLabel: UILabel!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

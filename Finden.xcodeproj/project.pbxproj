@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0682D9E824545F0A00F92189 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682D9E724545F0A00F92189 /* RegisterViewController.swift */; };
 		068910C32453721500CAE714 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068910C22453721500CAE714 /* SearchViewController.swift */; };
 		068910C5245377FF00CAE714 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068910C4245377FF00CAE714 /* ProfileViewController.swift */; };
-		06D163AA24539F3900761241 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D163A924539F3900761241 /* EventDetailViewController.swift */; };
+		06D163AA24539F3900761241 /* EventDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D163A924539F3900761241 /* EventDetailsController.swift */; };
 		06F9EAFC2453289500ADC852 /* EventsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */; };
 		06F9EAFE245328E000ADC852 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFD245328E000ADC852 /* EventCell.swift */; };
-		06F9EB002453294E00ADC852 /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFF2453294E00ADC852 /* CreationViewController.swift */; };
+		06F9EB002453294E00ADC852 /* CreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F9EAFF2453294E00ADC852 /* CreationController.swift */; };
 		37E09894EB39FCBB0536238A /* Pods_Finden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5617E95636E8DE043F35F95 /* Pods_Finden.framework */; };
 		3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB12F244B9C6A00E1EFAB /* AppDelegate.swift */; };
 		3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB131244B9C6A00E1EFAB /* SceneDelegate.swift */; };
@@ -48,13 +47,12 @@
 
 /* Begin PBXFileReference section */
 		01F72C3598503CB59F45BB6C /* Pods-Finden-FindenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finden-FindenUITests.debug.xcconfig"; path = "Target Support Files/Pods-Finden-FindenUITests/Pods-Finden-FindenUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		0682D9E724545F0A00F92189 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		068910C22453721500CAE714 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		068910C4245377FF00CAE714 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		06D163A924539F3900761241 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		06D163A924539F3900761241 /* EventDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsController.swift; sourceTree = "<group>"; };
 		06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFeedViewController.swift; sourceTree = "<group>"; };
 		06F9EAFD245328E000ADC852 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		06F9EAFF2453294E00ADC852 /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		06F9EAFF2453294E00ADC852 /* CreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationController.swift; sourceTree = "<group>"; };
 		3F7BB12C244B9C6A00E1EFAB /* Finden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BB12F244B9C6A00E1EFAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F7BB131244B9C6A00E1EFAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,11 +137,11 @@
 				3F7BB135244B9C6A00E1EFAB /* Main.storyboard */,
 				3F7BB138244B9C8000E1EFAB /* Assets.xcassets */,
 				44E754A924578CC4000004CD /* Controllers */,
-				06F9EAFF2453294E00ADC852 /* CreationViewController.swift */,
-				06D163A924539F3900761241 /* EventDetailViewController.swift */,
-				068910C4245377FF00CAE714 /* ProfileViewController.swift */,
-				06F9EAFD245328E000ADC852 /* EventCell.swift */,
+				06F9EAFF2453294E00ADC852 /* CreationController.swift */,
 				06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */,
+				06F9EAFD245328E000ADC852 /* EventCell.swift */,
+				06D163A924539F3900761241 /* EventDetailsController.swift */,
+				068910C4245377FF00CAE714 /* ProfileViewController.swift */,
 				068910C22453721500CAE714 /* SearchViewController.swift */,
 				3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */,
 				3F7BB13D244B9C8000E1EFAB /* Info.plist */,
@@ -169,13 +167,20 @@
 			path = FindenUITests;
 			sourceTree = "<group>";
 		};
-		44E754A924578CC4000004CD /* Controllers */ = {
+		44605DA02457A0DA0017DD9C /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				0682D9E724545F0A00F92189 /* RegisterViewController.swift */,
 				44D2DD76245798990056E8E2 /* LandingController.swift */,
 				44D2DD742457955F0056E8E2 /* SignInController.swift */,
 				44605D9E24579EB00017DD9C /* SignUpController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		44E754A924578CC4000004CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44605DA02457A0DA0017DD9C /* Authentication */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -442,16 +447,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0682D9E824545F0A00F92189 /* RegisterViewController.swift in Sources */,
 				068910C32453721500CAE714 /* SearchViewController.swift in Sources */,
 				44D2DD77245798990056E8E2 /* LandingController.swift in Sources */,
 				06F9EAFC2453289500ADC852 /* EventsFeedViewController.swift in Sources */,
-				06D163AA24539F3900761241 /* EventDetailViewController.swift in Sources */,
+				06D163AA24539F3900761241 /* EventDetailsController.swift in Sources */,
 				06F9EAFE245328E000ADC852 /* EventCell.swift in Sources */,
 				3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */,
 				3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */,
 				068910C5245377FF00CAE714 /* ProfileViewController.swift in Sources */,
-				06F9EB002453294E00ADC852 /* CreationViewController.swift in Sources */,
+				06F9EB002453294E00ADC852 /* CreationController.swift in Sources */,
 				44D2DD752457955F0056E8E2 /* SignInController.swift in Sources */,
 				44605D9F24579EB00017DD9C /* SignUpController.swift in Sources */,
 			);

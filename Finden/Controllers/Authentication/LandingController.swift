@@ -9,19 +9,21 @@
 import UIKit
 
 class LandingController: UIViewController {
+    
+    // MARK: - Outlets
+    
     @IBOutlet var signInButton: UIButton!
     @IBOutlet var signUpButton: UIButton!
 
+    // MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
         roundButtons()
     }
-    
-    @IBAction func handleSignInTapped(_ sender: Any) {
-        
-    }
+
+    // MARK: - Helpers
     
     func roundButtons() {
         signInButton.layer.cornerRadius = 44 / 2
