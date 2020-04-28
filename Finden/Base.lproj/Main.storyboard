@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLl-7W-byT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="1609"/>
+            <point key="canvasLocation" x="4823" y="2224"/>
         </scene>
         <!--Events Feed-->
         <scene sceneID="Mpf-TO-fLx">
@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyL-u3-5FB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1786.9565217391305" y="1532.8125"/>
+            <point key="canvasLocation" x="935" y="1537"/>
         </scene>
         <!--Event Details Controller-->
         <scene sceneID="etI-CJ-mih">
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qil-2g-E5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628.985507246377" y="1532.8125"/>
+            <point key="canvasLocation" x="1777" y="1537"/>
         </scene>
         <!--ProfileViewController-->
         <scene sceneID="pa1-hq-P1K">
@@ -353,7 +353,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1786.9565217391305" y="2223.8839285714284"/>
+            <point key="canvasLocation" x="935" y="2228"/>
         </scene>
         <!--Map-->
         <scene sceneID="vJd-WA-pqz">
