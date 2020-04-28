@@ -38,27 +38,14 @@ class EventsFeedViewController: UITableViewController {
         }
     }
     
-    //sending data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
+        guard let cell = sender as? UITableViewCell else { return }
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let event = events[indexPath.row]
-        
+
         let controller = segue.destination as! EventDetailsController
-        controller.event = event        
-        
-        //Get the new vi
-        //Find the selected movie
-//        if segue.identifier == "EventDetailSegue" {
-//            let cell = sender as! UITableViewCell
-//            let indexPath = eventsTableView.indexPath(for: cell)!
-//            let event = events[indexPath.row]
-//
-//            //Pass the selected movie to the details view controller
-//            let detailViewController = segue.destination as! EventDetailsController
-//            detailViewController.event = event
-//            eventsTableView.deselectRow(at: indexPath, animated: true)
-//        }
+        controller.event = event
+        eventsTableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -77,13 +64,7 @@ extension EventsFeedViewController {
         cell.eventnameLabel.text = event["eventName"] as? String
         cell.eventdateLabel.text = event["eventDate"] as? String
         cell.eventImageView.af_setImage(withURL: url)
-        cell.eventImageView.layer.cornerRadius = 10
         
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let controller = EventDetailViewController()
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
 }

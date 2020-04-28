@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tw5-E6-fFw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hKg-wX-9u3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -70,7 +70,7 @@
                                     <outlet property="eventImageView" destination="Spa-XT-C3X" id="upM-a7-Qnq"/>
                                     <outlet property="eventdateLabel" destination="Rg7-ix-qQh" id="Nln-Mb-xah"/>
                                     <outlet property="eventnameLabel" destination="Nb6-z0-whZ" id="KD5-2f-b5e"/>
-                                    <segue destination="b6O-Jg-vmc" kind="show" id="Cvj-Dn-URX"/>
+                                    <segue destination="b6O-Jg-vmc" kind="show" identifier="detailsSegue" id="Cvj-Dn-URX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
