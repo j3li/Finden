@@ -21,6 +21,7 @@
 		3F7BB13C244B9C8000E1EFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */; };
 		3F7BB147244B9C8100E1EFAB /* FindenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB146244B9C8100E1EFAB /* FindenTests.swift */; };
 		3F7BB152244B9C8100E1EFAB /* FindenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB151244B9C8100E1EFAB /* FindenUITests.swift */; };
+		441FD65C245A8DE000128A56 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441FD65B245A8DE000128A56 /* MapController.swift */; };
 		44605D9F24579EB00017DD9C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44605D9E24579EB00017DD9C /* SignUpController.swift */; };
 		44D2DD752457955F0056E8E2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DD742457955F0056E8E2 /* SignInController.swift */; };
 		44D2DD77245798990056E8E2 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DD76245798990056E8E2 /* LandingController.swift */; };
@@ -66,6 +67,7 @@
 		3F7BB14D244B9C8100E1EFAB /* FindenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BB151244B9C8100E1EFAB /* FindenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindenUITests.swift; sourceTree = "<group>"; };
 		3F7BB153244B9C8100E1EFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		441FD65B245A8DE000128A56 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		44605D9E24579EB00017DD9C /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		44D2DD742457955F0056E8E2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		44D2DD76245798990056E8E2 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				06F9EAFD245328E000ADC852 /* EventCell.swift */,
 				06D163A924539F3900761241 /* EventDetailsController.swift */,
 				068910C4245377FF00CAE714 /* ProfileViewController.swift */,
+				441FD65B245A8DE000128A56 /* MapController.swift */,
 				068910C22453721500CAE714 /* SearchViewController.swift */,
 				3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */,
 				3F7BB13D244B9C8000E1EFAB /* Info.plist */,
@@ -453,6 +456,7 @@
 				44D2DD77245798990056E8E2 /* LandingController.swift in Sources */,
 				06F9EAFC2453289500ADC852 /* EventsFeedViewController.swift in Sources */,
 				06D163AA24539F3900761241 /* EventDetailsController.swift in Sources */,
+				441FD65C245A8DE000128A56 /* MapController.swift in Sources */,
 				06F9EAFE245328E000ADC852 /* EventCell.swift in Sources */,
 				3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */,
 				3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */,

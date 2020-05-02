@@ -20,6 +20,8 @@ class EventsFeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.separatorStyle = .none
     }
     
     override func viewDidAppear(_ animated: Bool) {
