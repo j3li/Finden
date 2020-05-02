@@ -18,7 +18,7 @@ class EventCell: UITableViewCell {
         super.layoutSubviews()
         
         eventImageView.layer.cornerRadius = 150 / 8
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
     }
     
     override func awakeFromNib() {
