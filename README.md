@@ -14,6 +14,8 @@ Group Project - README Template
 ### Description
 This app is used to look for events/free stuff on campus.
 
+<img src="http://g.recordit.co/P6LPTYo5js.gif">
+
 ### App Evaluation
 - **Category:** Social/Shopping
 - **Mobile:** Usage of map, camera, & location
