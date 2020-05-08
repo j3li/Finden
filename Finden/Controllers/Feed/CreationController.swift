@@ -59,6 +59,7 @@ class CreationController: UIViewController {
 }
 
 extension CreationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBAction func handleImageViewTapped(_ sender: UITapGestureRecognizer) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self

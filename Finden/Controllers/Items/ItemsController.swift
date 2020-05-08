@@ -7,33 +7,62 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
 
 class ItemsController: UIViewController {
     
     // MARK: - Properties
     
+    var items = [PFObject]() {
+        didSet { tableView.reloadData() }
+    }
+    
     @IBOutlet var tableView: UITableView!
     
     // MARK: - Lifecycles
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.rowHeight = 150
+        tableView.reloadData()
+        
+        let query = PFQuery(className: "Items")
+        
+        query.includeKeys(["itemName","itemImage", "itemDescription"])
+        query.limit = 20
+        query.findObjectsInBackground { (items, error) in
+            if let items = items {
+                self.items = items
+            }
+        }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 }
 
 extension ItemsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemsCell
+        let item = items[indexPath.row]
+        let imageFile = item["itemImage"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemsCell") as! ItemsCell
+        cell.itemName.text = item["itemName"] as? String
+        cell.itemImage.af_setImage(withURL: url)
+
         return cell
     }
-    
-    
 }
 
 
