@@ -608,8 +608,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MC5-M6-qDW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="dhl-4Q-0fi" kind="relationship" relationship="viewControllers" id="uhd-uk-dop"/>
@@ -624,7 +624,7 @@
         <scene sceneID="zPH-Mh-deN">
             <objects>
                 <navigationController title="Feed Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="dhl-4Q-0fi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" id="zC8-iA-gJt"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="events" id="zC8-iA-gJt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1rR-pj-cBT">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -951,11 +951,11 @@
             </objects>
             <point key="canvasLocation" x="955" y="-615"/>
         </scene>
-        <!--Item-->
+        <!--Free Items-->
         <scene sceneID="Tds-Lu-7l1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NQh-XS-vkC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XvD-2f-rx0" userLabel="Event"/>
+                    <tabBarItem key="tabBarItem" title="Free Items" image="items" id="XvD-2f-rx0" userLabel="Event"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GQu-j0-Rhg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -975,4 +975,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="V7L-vc-WaO"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="events" width="20" height="20"/>
+        <image name="items" width="20" height="20"/>
+    </resources>
 </document>
