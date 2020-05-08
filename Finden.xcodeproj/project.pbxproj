@@ -26,6 +26,7 @@
 		440E93512465D3C000F8B48D /* ItemCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E93502465D3C000F8B48D /* ItemCreationController.swift */; };
 		441FD65C245A8DE000128A56 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441FD65B245A8DE000128A56 /* MapController.swift */; };
 		44605D9F24579EB00017DD9C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44605D9E24579EB00017DD9C /* SignUpController.swift */; };
+		44927E432465E32C00D48D96 /* ItemDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44927E422465E32C00D48D96 /* ItemDetailsController.swift */; };
 		44D2DD752457955F0056E8E2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DD742457955F0056E8E2 /* SignInController.swift */; };
 		44D2DD77245798990056E8E2 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DD76245798990056E8E2 /* LandingController.swift */; };
 		81FB1372776D70D6B8B41C81 /* Pods_Finden_FindenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D876A5F53F2A5B104B53C01 /* Pods_Finden_FindenUITests.framework */; };
@@ -75,6 +76,7 @@
 		440E93502465D3C000F8B48D /* ItemCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCreationController.swift; sourceTree = "<group>"; };
 		441FD65B245A8DE000128A56 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		44605D9E24579EB00017DD9C /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		44927E422465E32C00D48D96 /* ItemDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsController.swift; sourceTree = "<group>"; };
 		44D2DD742457955F0056E8E2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		44D2DD76245798990056E8E2 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		48C62F77C232AA1418E5CB48 /* Pods_FindenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +191,7 @@
 				440E934C2465D03C00F8B48D /* ItemsController.swift */,
 				440E934E2465D08900F8B48D /* ItemsCell.swift */,
 				440E93502465D3C000F8B48D /* ItemCreationController.swift */,
+				44927E422465E32C00D48D96 /* ItemDetailsController.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				06F9EB002453294E00ADC852 /* CreationController.swift in Sources */,
 				44D2DD752457955F0056E8E2 /* SignInController.swift in Sources */,
 				44605D9F24579EB00017DD9C /* SignUpController.swift in Sources */,
+				44927E432465E32C00D48D96 /* ItemDetailsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

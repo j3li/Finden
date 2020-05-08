@@ -44,6 +44,16 @@ class ItemsController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let cell = sender as? UITableViewCell else { return }
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let item = items[indexPath.row]
+
+        let controller = segue.destination as! ItemDetailsController
+        controller.items = item
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension ItemsController: UITableViewDelegate, UITableViewDataSource {
