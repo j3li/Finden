@@ -20,6 +20,8 @@ class EventsFeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,8 +34,8 @@ class EventsFeedViewController: UITableViewController {
         query.includeKeys(["eventName","eventDate", "eventCaption","eventImage"])
         query.limit = 20
         query.findObjectsInBackground { (events, error) in
-            if events != nil {
-                self.events = events!
+            if let events = events {
+                self.events = events
             }
         }
     }

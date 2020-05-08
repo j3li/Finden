@@ -21,7 +21,12 @@
 		3F7BB13C244B9C8000E1EFAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */; };
 		3F7BB147244B9C8100E1EFAB /* FindenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB146244B9C8100E1EFAB /* FindenTests.swift */; };
 		3F7BB152244B9C8100E1EFAB /* FindenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BB151244B9C8100E1EFAB /* FindenUITests.swift */; };
+		440E934D2465D03C00F8B48D /* ItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E934C2465D03C00F8B48D /* ItemsController.swift */; };
+		440E934F2465D08900F8B48D /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E934E2465D08900F8B48D /* ItemsCell.swift */; };
+		440E93512465D3C000F8B48D /* ItemCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440E93502465D3C000F8B48D /* ItemCreationController.swift */; };
+		441FD65C245A8DE000128A56 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441FD65B245A8DE000128A56 /* MapController.swift */; };
 		44605D9F24579EB00017DD9C /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44605D9E24579EB00017DD9C /* SignUpController.swift */; };
+		44927E432465E32C00D48D96 /* ItemDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44927E422465E32C00D48D96 /* ItemDetailsController.swift */; };
 		44D2DD752457955F0056E8E2 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DD742457955F0056E8E2 /* SignInController.swift */; };
 		44D2DD77245798990056E8E2 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D2DD76245798990056E8E2 /* LandingController.swift */; };
 		81FB1372776D70D6B8B41C81 /* Pods_Finden_FindenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D876A5F53F2A5B104B53C01 /* Pods_Finden_FindenUITests.framework */; };
@@ -66,7 +71,12 @@
 		3F7BB14D244B9C8100E1EFAB /* FindenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7BB151244B9C8100E1EFAB /* FindenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindenUITests.swift; sourceTree = "<group>"; };
 		3F7BB153244B9C8100E1EFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		440E934C2465D03C00F8B48D /* ItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsController.swift; sourceTree = "<group>"; };
+		440E934E2465D08900F8B48D /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
+		440E93502465D3C000F8B48D /* ItemCreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCreationController.swift; sourceTree = "<group>"; };
+		441FD65B245A8DE000128A56 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		44605D9E24579EB00017DD9C /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		44927E422465E32C00D48D96 /* ItemDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsController.swift; sourceTree = "<group>"; };
 		44D2DD742457955F0056E8E2 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		44D2DD76245798990056E8E2 /* LandingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
 		48C62F77C232AA1418E5CB48 /* Pods_FindenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,11 +147,8 @@
 				3F7BB135244B9C6A00E1EFAB /* Main.storyboard */,
 				3F7BB138244B9C8000E1EFAB /* Assets.xcassets */,
 				44E754A924578CC4000004CD /* Controllers */,
-				06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */,
-				06F9EAFF2453294E00ADC852 /* CreationController.swift */,
-				06F9EAFD245328E000ADC852 /* EventCell.swift */,
-				06D163A924539F3900761241 /* EventDetailsController.swift */,
 				068910C4245377FF00CAE714 /* ProfileViewController.swift */,
+				441FD65B245A8DE000128A56 /* MapController.swift */,
 				068910C22453721500CAE714 /* SearchViewController.swift */,
 				3F7BB13A244B9C8000E1EFAB /* LaunchScreen.storyboard */,
 				3F7BB13D244B9C8000E1EFAB /* Info.plist */,
@@ -169,6 +176,28 @@
 			path = FindenUITests;
 			sourceTree = "<group>";
 		};
+		440E934A2465CF9700F8B48D /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				06F9EAFB2453289500ADC852 /* EventsFeedViewController.swift */,
+				06F9EAFD245328E000ADC852 /* EventCell.swift */,
+				06D163A924539F3900761241 /* EventDetailsController.swift */,
+				06F9EAFF2453294E00ADC852 /* CreationController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		440E934B2465D00F00F8B48D /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				440E934C2465D03C00F8B48D /* ItemsController.swift */,
+				440E934E2465D08900F8B48D /* ItemsCell.swift */,
+				440E93502465D3C000F8B48D /* ItemCreationController.swift */,
+				44927E422465E32C00D48D96 /* ItemDetailsController.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		44605DA02457A0DA0017DD9C /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +211,8 @@
 		44E754A924578CC4000004CD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				440E934B2465D00F00F8B48D /* Items */,
+				440E934A2465CF9700F8B48D /* Feed */,
 				44605DA02457A0DA0017DD9C /* Authentication */,
 			);
 			path = Controllers;
@@ -449,17 +480,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440E934F2465D08900F8B48D /* ItemsCell.swift in Sources */,
 				068910C32453721500CAE714 /* SearchViewController.swift in Sources */,
 				44D2DD77245798990056E8E2 /* LandingController.swift in Sources */,
 				06F9EAFC2453289500ADC852 /* EventsFeedViewController.swift in Sources */,
 				06D163AA24539F3900761241 /* EventDetailsController.swift in Sources */,
+				441FD65C245A8DE000128A56 /* MapController.swift in Sources */,
 				06F9EAFE245328E000ADC852 /* EventCell.swift in Sources */,
+				440E93512465D3C000F8B48D /* ItemCreationController.swift in Sources */,
 				3F7BB130244B9C6A00E1EFAB /* AppDelegate.swift in Sources */,
 				3F7BB132244B9C6A00E1EFAB /* SceneDelegate.swift in Sources */,
+				440E934D2465D03C00F8B48D /* ItemsController.swift in Sources */,
 				068910C5245377FF00CAE714 /* ProfileViewController.swift in Sources */,
 				06F9EB002453294E00ADC852 /* CreationController.swift in Sources */,
 				44D2DD752457955F0056E8E2 /* SignInController.swift in Sources */,
 				44605D9F24579EB00017DD9C /* SignUpController.swift in Sources */,
+				44927E432465E32C00D48D96 /* ItemDetailsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
