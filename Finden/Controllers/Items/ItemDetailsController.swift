@@ -18,7 +18,7 @@ class ItemDetailsController: UIViewController {
     
     @IBOutlet var itemImageView: UIImageView!
     @IBOutlet var itemNameLabel: UILabel!
-    @IBOutlet var itemDescriptionLabel: UILabel!
+    @IBOutlet var itemDescription: UITextView!
     
     // MARK: - Lifecycle
 
@@ -35,7 +35,7 @@ class ItemDetailsController: UIViewController {
         
         itemImageView.af_setImage(withURL: url)
         itemNameLabel.text = items["itemName"] as? String ?? ""
-        itemDescriptionLabel.text = items["itemDescription"] as? String ?? ""
+        itemDescription.text = items["itemDescription"] as? String ?? ""
         title = items["itemName"] as? String ?? ""
     }
 }
