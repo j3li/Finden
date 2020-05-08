@@ -42,9 +42,6 @@ class CreationController: UIViewController {
         let file = PFFileObject(name: "image.png", data: imageData)
         let event = PFObject(className: "Events")
         
-        // So far we're only uploading caption, name, location, date, image
-        // idk if we're gonna associate an event with a user?
-        
         event["eventCaption"] = caption
         event["eventName"] = name
         event["eventLocation"] = location
@@ -62,6 +59,7 @@ class CreationController: UIViewController {
 }
 
 extension CreationController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBAction func handleImageViewTapped(_ sender: UITapGestureRecognizer) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self

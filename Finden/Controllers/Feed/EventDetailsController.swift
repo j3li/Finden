@@ -12,7 +12,7 @@ import AlamofireImage
 
 class EventDetailsController: UIViewController {
    
-    // MARK: - Outlets and Properties
+    // MARK: - Outlets
     
     @IBOutlet var eventImageView: UIImageView!
     @IBOutlet var eventName: UILabel!

@@ -1,24 +1,22 @@
 //
-//  EventCell.swift
+//  ItemsCell.swift
 //  Finden
 //
-//  Created by 김송은 on 4/24/20.
+//  Created by Alan Cao on 5/8/20.
 //  Copyright © 2020 Finden. All rights reserved.
 //
 
 import UIKit
 
-class EventCell: UITableViewCell {
-
-    @IBOutlet weak var eventImageView: UIImageView!
-    @IBOutlet weak var eventnameLabel: UILabel!
-    @IBOutlet weak var eventdateLabel: UILabel!
+class ItemsCell: UITableViewCell {
+    
+    @IBOutlet var itemImage: UIImageView!
+    @IBOutlet var itemName: UILabel!
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        eventImageView.layer.cornerRadius = 150 / 8
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4))
+        itemImage.layer.cornerRadius = 150 / 16
     }
     
     override func awakeFromNib() {
