@@ -26,6 +26,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
         mapView.setRegion(region, animated: true)
+        /*
         let query = PFQuery(className: "Events")
         query.includeKey("eventLocation")
         query.limit = 20
@@ -55,7 +56,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 print("boinked \(title)")
             }
         }
+*/
     }
+ 
 
     /*
     // MARK: - Navigation

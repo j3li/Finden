@@ -45,6 +45,7 @@ class CreationController: UIViewController {
         
         event["eventCaption"] = caption
         event["eventName"] = name
+        /*
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(location) {
             (placemarks, error) in
@@ -54,6 +55,7 @@ class CreationController: UIViewController {
             let clLocation = CLLocation(latitude: lat!, longitude: lon!)
             event["eventLocation"] = clLocation
         }
+ */
         event["eventDate"] =  date
         event["eventImage"] = file
 
