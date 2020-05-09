@@ -18,15 +18,23 @@ class ItemCreationController: UIViewController {
     @IBOutlet var itemTextView: UITextView!
     @IBOutlet var postButton: UIButton!
     
+    private let tapGesture = UITapGestureRecognizer()
+    
     // MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         postButton.layer.cornerRadius = 44 / 2
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.addTarget(self, action: #selector(handleDismissal))
     }
     
     // MARK: - Actions
+    
+    @objc func handleDismissal() {
+        view.endEditing(true)
+    }
     
     @IBAction func handlePostTapped(_ sender: Any) {
         guard let imageData = createImageView.image?.pngData() else { return }

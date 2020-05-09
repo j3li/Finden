@@ -23,15 +23,23 @@ class CreationController: UIViewController {
     @IBOutlet weak var eventcaptionTextView: UITextView!
     @IBOutlet weak var createImageView: UIImageView!
     
+    private let tapGesture = UITapGestureRecognizer()
+    
     // MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createButton.layer.cornerRadius = 44 / 2
+        view.addGestureRecognizer(tapGesture)
+        tapGesture.addTarget(self, action: #selector(handleDismissal))
     }
     
     // MARK: - Actions
+    
+    @objc func handleDismissal() {
+        view.endEditing(true)
+    }
     
     @IBAction func handleCreateEventTapped(_ sender: Any) {
         guard let imageData = createImageView.image?.pngData() else { return }
