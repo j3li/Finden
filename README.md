@@ -31,23 +31,19 @@ This app is used to look for events/free stuff on campus.
 **Required Must-have Stories**
 
 - [x] User can register for an account
-- [ ] User can link the facebook account
 - [x] User can log in
-- [ ] User can log out
-- [ ] User can make a post
+- [x] User can log out
+- [x] User can make a post
 - [x] User can view feed
-- [ ] User can view posts
-- [ ] User can scroll through list of posts
-- [x] User can tap to switch between tabs to look at list, tableview, or map.
-- [ ] User can zoom in or out on map
-- [ ] User can filter for event or free stuff
-- [ ] User can look at profile
+- [x] User can view posts
+- [x] User can scroll through list of posts
+- [x] User can tap to switch between tabs to look at list of events or items
 
 **Optional Nice-to-have Stories**
 
-* User can search for event
-* User can see distance from current location
-* User can search for events on specific dates
+* [x] User can search for event
+* [ ] User can see distance from current location
+* [ ] User can search for events on specific dates
 
 ### 2. Screen Archetypes
 
@@ -385,5 +381,3 @@ This app is used to look for events/free stuff on campus.
         }
     }
     ```
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
