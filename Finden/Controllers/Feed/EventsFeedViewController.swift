@@ -56,7 +56,7 @@ class EventsFeedViewController: UIViewController {
         PFUser.logOut()
         
         let main = UIStoryboard(name: "Main", bundle: nil)
-        let LandingController = main.instantiateViewController(withIdentifier: "LandingController")
+        let LandingController = main.instantiateViewController(withIdentifier: "LandingNavigationController")
         
         let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
         delegate.window?.rootViewController = LandingController
