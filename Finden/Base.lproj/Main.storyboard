@@ -132,7 +132,7 @@
                                     <outlet property="delegate" destination="fbe-SJ-yZN" id="v8I-aL-7NH"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jEw-wh-Xzg">
+                            <searchBar contentMode="redraw" placeholder="Search for an event" translatesAutoresizingMaskIntoConstraints="NO" id="jEw-wh-Xzg">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -142,10 +142,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="jEw-wh-Xzg" firstAttribute="trailing" secondItem="jsN-78-9tf" secondAttribute="trailing" id="42H-vP-a7P"/>
-                            <constraint firstItem="jEw-wh-Xzg" firstAttribute="leading" secondItem="jsN-78-9tf" secondAttribute="leading" id="EDF-db-qT8"/>
-                            <constraint firstItem="jEw-wh-Xzg" firstAttribute="top" secondItem="HlD-Yq-yUh" secondAttribute="top" id="V5K-UO-Ufb"/>
+                            <constraint firstItem="jEw-wh-Xzg" firstAttribute="top" secondItem="HlD-Yq-yUh" secondAttribute="top" id="II7-8p-UlV"/>
+                            <constraint firstItem="jEw-wh-Xzg" firstAttribute="leading" secondItem="joP-sV-OiM" secondAttribute="leading" id="ZXf-TI-ZMD"/>
                             <constraint firstItem="jsN-78-9tf" firstAttribute="top" secondItem="jEw-wh-Xzg" secondAttribute="bottom" id="igU-z4-BNX"/>
+                            <constraint firstAttribute="trailing" secondItem="jEw-wh-Xzg" secondAttribute="trailing" id="vqV-zn-Krw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HlD-Yq-yUh"/>
                     </view>
@@ -494,7 +494,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qdV-Sv-b4W">
+                            <searchBar contentMode="redraw" placeholder="Search for free items" translatesAutoresizingMaskIntoConstraints="NO" id="qdV-Sv-b4W">
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jWr-3H-1rF"/>
