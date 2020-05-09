@@ -27,6 +27,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
         mapView.setRegion(region, animated: true)
         /*
+         
         let query = PFQuery(className: "Events")
         query.includeKey("eventLocation")
         query.limit = 20
