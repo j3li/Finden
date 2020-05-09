@@ -54,6 +54,15 @@ class ItemsController: UIViewController {
         controller.items = item
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    @IBAction func onSignOut(_ sender: Any) {
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let LandingController = main.instantiateViewController(withIdentifier: "LandingController")
+        
+        let delegate = self.view.window?.windowScene?.delegate as! SceneDelegate
+        delegate.window?.rootViewController = LandingController
+    }
 }
 
 extension ItemsController: UITableViewDelegate, UITableViewDataSource {
@@ -73,6 +82,36 @@ extension ItemsController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
+}
+extension ItemsController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let query = PFQuery(className: "Items")
+            
+        query.includeKeys(["itemName","itemImage", "itemDescription"])
+        query.limit = 20
+        query.whereKey("itemName", matchesRegex: searchText, modifiers: "i")
+        query.findObjectsInBackground { (items, error) in
+            if let items = items {
+                self.items = items
+            }
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        let query = PFQuery(className: "Items")
+        
+        query.includeKeys(["itemName","itemImage", "itemDescription"])
+        query.limit = 20
+        query.findObjectsInBackground { (items, error) in
+            if let items = items {
+                self.items = items
+            }
+        }
+        tableView.reloadData()
+    }
+    
 }
 
 

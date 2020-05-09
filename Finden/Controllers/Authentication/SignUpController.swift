@@ -35,14 +35,21 @@ class SignUpController: UIViewController {
         user["firstName"] = firstnameTextField.text
         user["lastName"] = lastnameTextField.text
         
-        user.signUpInBackground { (success, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            print("Successfully registered user")
-            self.performSegue(withIdentifier: "registeredSegue", sender: nil)
-        }
+        if(firstnameTextField.text!.isEmpty || lastnameTextField.text!.isEmpty) {
+               let alert = UIAlertController(title: "Error", message: "Please fill in all fields", preferredStyle: UIAlertController.Style.alert)
+                   alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                   self.present(alert, animated: true, completion: nil)
+               }
+               else {
+                   user.signUpInBackground { (success, error) in
+                       if let error = error {
+                           print("Error: \(error.localizedDescription)")
+                           return
+                       }
+                       print("Successfully registered user")
+                       self.performSegue(withIdentifier: "registeredSegue", sender: nil)
+                   }
+               }
     }
     
     func roundButtons() {
