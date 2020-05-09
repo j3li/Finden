@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import AlamofireImage
+import CoreLocation
 
 class CreationController: UIViewController {
     
@@ -44,7 +45,15 @@ class CreationController: UIViewController {
         
         event["eventCaption"] = caption
         event["eventName"] = name
-        event["eventLocation"] = location
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(location) {
+            (placemarks, error) in
+            let placemark = placemarks?.first?.location
+            let lat = placemark?.coordinate.latitude
+            let lon = placemark?.coordinate.longitude
+            let clLocation = CLLocation(latitude: lat!, longitude: lon!)
+            event["eventLocation"] = clLocation
+        }
         event["eventDate"] =  date
         event["eventImage"] = file
 
@@ -76,4 +85,8 @@ extension CreationController: UIImagePickerControllerDelegate, UINavigationContr
 
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension CreationController : UITextFieldDelegate {
+    
 }

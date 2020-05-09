@@ -11,11 +11,13 @@ import MapKit
 import CoreLocation
 import AddressBookUI
 import MessageUI
+import Parse
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    
+    var events = [PFObject]();
     override func viewDidLoad() {
         //super.viewDidLoad()
         mapView.delegate = self
@@ -24,21 +26,33 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegion(center: mapCenter, span: mapSpan)
         mapView.setRegion(region, animated: true)
-        addPin()
+        let query = PFQuery(className: "Events")
+        query.includeKey("eventLocation")
+        query.limit = 20
+        query.findObjectsInBackground { (eventList, error) in
+            if eventList != nil {
+                self.events = eventList!
+                self.mapView.reloadInputViews()
+            }
+        }
     }
-    
-    func addPin(){
+
+    func addPin(locationCoordinate:CLLocationCoordinate2D, eventName:String){
         let annotation = MKPointAnnotation()
-        let locationCoordinate = CLLocationCoordinate2D(latitude: 32.8801, longitude: -117.2340)
         annotation.coordinate = locationCoordinate
-        annotation.title = "Test"
+        annotation.title = eventName
         mapView.addAnnotation(annotation)
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView){
+        for event in events {
+            let locEvent = event["eventLocation"] as! CLLocationCoordinate2D
+            let eventName = event["eventName"] as! String
+            addPin(locationCoordinate: locEvent, eventName: eventName)
+        }
         if let annotation = view.annotation {
             if let title = annotation.title! {
-                print("Tapped \(title) pin")
+                print("boinked \(title)")
             }
         }
     }
