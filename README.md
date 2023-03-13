@@ -86,10 +86,6 @@ This app is used to look for events/free stuff on campus.
 ## Wireframes
 <img src="https://imgur.com/zjSQUOe.png" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
 ## Schema 
 ### Models
 **Post**
